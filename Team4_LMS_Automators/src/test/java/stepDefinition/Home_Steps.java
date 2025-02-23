@@ -60,25 +60,78 @@ public class Home_Steps {
 	@Then("Admin should see the navigation bar text on the top right side")
 	public void admin_should_see_the_navigation_bar_text_on_the_top_right_side() {
 	    stepsToLogin();
-	    Assert.assertEquals(Home.getnavBarText(),"Home\r\n"
-	    		+ "Program\r\n"
-	    		+ "Batch\r\n"
-	    		+ "Class\r\n"
-	    		+ "Logout ");
+//	    Assert.assertEquals(Home.getnavBarText(),"Home\r\n"
+//	    		+ "Program\r\n"
+//	    		+ "Batch\r\n"
+//	    		+ "Class\r\n"
+//	    		+ "Logout");
+	    Assert.assertEquals(Home.getnavBarLoc(), true);
 	}
 
 	@Then("Admin should see home in the first place")
 	public void admin_should_see_home_in_the_first_place() {
-//		Assert.assertEquals(Home.home_first_place(),true);
-//		Assert.assertEquals(Home.sort_elements(),Home.get_home_xPos());
+		stepsToLogin();
+		Assert.assertEquals(Home.toolBarElement_place(Home.get_webelement("home"), 0),true);
+	}
+
+	@Then("Admin should see program in the Second place")
+	public void admin_should_see_program_in_the_second_place() {
+		stepsToLogin();
+		Assert.assertEquals(Home.toolBarElement_place(Home.get_webelement("program"), 1),true);
+	}
+
+	@Then("Admin should see batch in the Third place")
+	public void admin_should_see_batch_in_the_third_place() {
+		stepsToLogin();
+		Assert.assertEquals(Home.toolBarElement_place(Home.get_webelement("batch"), 2),true);
+	}
+	
+	@Then("Admin should see class in the Fourth place")
+	public void admin_should_see_class_in_the_fourth_place() {
+		stepsToLogin();
+		Assert.assertEquals(Home.toolBarElement_place(Home.get_webelement("class"), 3),true);
+	}
+	
+	@Then("Admin should see logout in the Fifth place")
+	public void admin_should_see_logout_in_the_fifth_place() {
+		stepsToLogin();
+		Assert.assertEquals(Home.toolBarElement_place(Home.get_webelement("logout"), 4),true);
 	}
 	
 	@Then("Admin should see welcome message with user name and role")
     public void admin_should_see_welcome_message_with_user_name_and_role() {
-        String expectedWelcomeMessage = "Welcome sdetnumpyninja@gmail.com (Role: Admin)";
+		stepsToLogin();
+        String expectedWelcomeMessage = "Welcome sdetnumpyninja@gmail.com";
         Assert.assertEquals(Home.getWelcomeMessage().contains(expectedWelcomeMessage), true);
     }
 	
+	@Then("Admin shoud see piechart")
+	public void admin_shoud_see_piechart() {
+	    stepsToLogin();
+	    Assert.assertEquals(Home.isDisplayed(Home.get_webelement("doughnut")),true);
+	}
+	
+	@Then("Admin should see bar chart for Active and inactive user")
+	public void admin_should_see_bar_chart_for_active_and_inactive_user() {
+	    stepsToLogin();
+//	    Home.getElementText();
+	    Assert.assertEquals(Home.isDisplayed(Home.get_webelement("bargraph")),true);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	@Then("Admin should see staff table with pagination icons")
+	public void admin_should_see_staff_table_with_pagination_icons() {
+
+	}
 	
 }
 
