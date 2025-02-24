@@ -118,15 +118,57 @@ public class Home_Steps {
 	    Assert.assertEquals(Home.isDisplayed(Home.get_webelement("bargraph")),true);
 	}
 	
+	@Then("Admin should see user count")
+	public void admin_should_see_user_count() {
+	    stepsToLogin();
+	    Assert.assertEquals(Home.isDisplayed(Home.get_webelement("UserCount")),true);
+	}
 	
 	
+	@Then("Admin should see staff count")
+	public void admin_should_see_staff_count() {
+		 stepsToLogin();
+		 Assert.assertEquals(Home.isDisplayed(Home.get_webelement("StaffCount")),true);
+	}
 	
 	
+	@Then("Admin should see Program count")
+	public void admin_should_see_program_count() {
+		stepsToLogin();
+		 Assert.assertEquals(Home.isDisplayed(Home.get_webelement("ProgramCount")),true);
+	}
+
+	@Then("Admin should see batch count")
+	public void admin_should_see_batch_count() {
+		stepsToLogin();
+//		System.out.println("widget[2]:"+Home.get_webelement("widget").getAccessibleName());
+		Assert.assertEquals(Home.isDisplayed(Home.get_webelement("BatchCount")),true);
+	}
+
 	
 	
+	@Then("Admin should see previous page icon disabled")
+	public void admin_should_see_previous_page_icon_disabled() {
+		stepsToLogin();
+		System.out.println("Text:"+Home.get_webelement("prePage").getAccessibleName());
+//	    Assert.assertEqualsc(Home.isEnabled(Home.get_webelement("prePage")),false);
+	}
+	
+	@Then("Admin should see first page icon disabled")
+	public void admin_should_see_first_page_icon_disabled() {
+		stepsToLogin();
+		System.out.println("Text:"+Home.get_webelement("firstPage"));
+//	    Assert.assertEquals(Home.isEnabled(Home.get_webelement("firstPage")),true);
+	}
 	
 	
-	
+	@Then("Admin should see {int} staff data in a page")
+	public void admin_should_see_staff_data_in_a_page(Integer int1) {
+		stepsToLogin();
+		Home.getStaffCount();
+//		Assert.assertEquals(Home.getStaffCount(),5);
+	}
+
 	
 	@Then("Admin should see staff table with pagination icons")
 	public void admin_should_see_staff_table_with_pagination_icons() {
