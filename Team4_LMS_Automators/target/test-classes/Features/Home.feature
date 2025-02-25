@@ -88,62 +88,59 @@ Given Admin is on login Page
 When Admin enter valid data in all field and clicks login button
 Then Admin should see bar chart for Active and inactive user												
 
-#########done							
-#
-#Scenario: Verify user count
-#Given Admin is on login Page
-#When Admin enter valid data in all field and clicks login button
-#Then Admin should see user count
+						
+@Tag15
+Scenario: Verify user count
+Given Admin is on login Page
+When Admin enter valid data in all field and clicks login button
+Then Admin should see user count
 #Note : count includes Active and inactive
-#
-#
-#Scenario: Verify staff count
-#Given Admin is on login Page
-#When Admin enter valid data in all field and clicks login button
-#Then Admin should see staff count
+
+@Tag16
+Scenario: Verify staff count
+Given Admin is on login Page
+When Admin enter valid data in all field and clicks login button
+Then Admin should see staff count
 #Note : count includes Active and inactive
-#
-#												
-#
-#Scenario: Verify program count
-#Given Admin is on login Page
-#When Admin enter valid data in all field and clicks login button
-#Then Admin should see Program count
+
+												
+@Tag17
+Scenario: Verify program count
+Given Admin is on login Page
+When Admin enter valid data in all field and clicks login button
+Then Admin should see Program count
 #Note : count includes Active and inactive
-#
-#
-#
-#Scenario: Verify batch count
-#Given Admin is on login Page
-#When Admin enter valid data in all field and clicks login button
-#Then Admin should see batch count
+
+
+@Tag18
+Scenario: Verify batch count
+Given Admin is on login Page
+When Admin enter valid data in all field and clicks login button
+Then Admin should see batch count
 #Note : count includes Active and inactive
-#
 
 
+@Tag19
+Scenario: Verify staff table pagination
+Given Admin is on login Page
+When Admin enter valid data in all field and clicks login button
+Then Admin should see staff table with pagination icons
 
-#Scenario: Verify staff table pagination
-#Given Admin is on login Page
-#When Admin enter valid data in all field and clicks login button
-#Then Admin should see staff table with pagination icons
+@Tag20
+Scenario: Verify staff data page split
+Given Admin is on login Page
+When Admin enter valid data in all field and clicks login button
+Then Admin should see 5 staff data in a page
 
-
-
-#Scenario: Verify staff data page split
-#Given Admin is on login Page
-#When Admin enter valid data in all field and clicks login button
-#Then Admin should see 5 staff data in a page
-
-
+@Tag21
 Scenario: Verify previous page icon disable
 Given Admin is on login Page
 When Admin enter valid data in all field and clicks login button
 Then Admin should see previous page icon disabled
 
-
+@Tag22
 Scenario: Verify first page icon disable
 Given Admin is on login Page
 When Admin enter valid data in all field and clicks login button
 Then Admin should see first page icon disabled
-												
 

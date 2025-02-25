@@ -3,6 +3,7 @@ package pageFactory;
 import java.util.Arrays;
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -25,35 +26,36 @@ public class HomePageFactory {
 	@FindBy(xpath= "/html/body/app-root/app-header/mat-toolbar/span[1]") WebElement LMStitle;
 	@FindBy(xpath = "/html/body/app-root/app-header/mat-toolbar/div") WebElement navBarText;
 	@FindBy(xpath="//strong[normalize-space()='Welcome sdetnumpyninja@gmail.com']")	WebElement welcomeMessage;
-//	@FindBy(xpath="//div[@class='widget blue']/div[@class='value']") WebElement UserCountNote;
 	@FindBy(xpath="//div[contains(text(), '49')]") WebElement UserCount;
 	@FindBy(xpath="//div[contains(text(), '21')]") WebElement StaffCount;
-
+	
+	
+	
+	@FindBy(xpath = "//button[@aria-label='Previous page']") WebElement previousPageIcon;
+	@FindBy(xpath="//*[name()='path' and contains(@d,'M18.41 16.')]") WebElement firstPageIcon;
+	@FindBy(xpath="//mat-card-content[@class='mat-card-content']//canvas[@class='chartjs-render-monitor']")	WebElement BarGraph;
+	@FindBy(xpath="//app-doughnutchart") WebElement PieChart;
+	
+	
+		
+	@FindBy(xpath="(//div[@class='widget red']/div[2]/div[1])") WebElement batchCount;
+	@FindBy(xpath="(//div[@class='widget blue']/div[2]/div[1])") WebElement programCount;
+//	@FindBy(xpath="//div[contains(text(), 'Batches')]") WebElement batchCount;
+//	@FindBy(partialLinkText="Batches") WebElement batchCount;
 //	@FindBy(xpath = "//div[@class='widget red'] or //div[contains(@class, 'value')]") WebElement BatchCount;
-//	@FindBy(css = "div.widget.red div.value") WebElement BatchCount;
-	
-	
+//	@FindBy(css = "div.widget.red div.value") WebElement BatchCount;	
 //    @FindBy(xpath="//div[contains(text(), '/batch']") WebElement BatchCount;
 //	@FindBy(className="pi pi-sitemap") WebElement BatchCount;
 //	@FindBy(xpath="//div[contains(text(), '237')]") WebElement ProgramCount;
 //	@FindBy(xpath="mat-table cdk-table table-container mat-elevation-z8") List<WebElement> staffRows;
 //	/html/body/app-root/app-home/div/app-dashboard/div/div[3]/mat-grid-list/div/mat-grid-tile[1]/figure/div/app-staffdata/mat-table
-	
-	
-	
-
 ////	xpath /html/body/app-root/app-dashboard/div/div[3]/mat-grid-list/div/mat-grid-tile[1]/figure/div/app-staffdata/mat-table
 ////	classname mat-table cdk-table table-container mat-elevation-z8
-//	@FindBy(xpath = "//div[@class='pagination-icons']") WebElement paginationIcons;
-//
-//    @FindBy(xpath = "//table[@id='staffTable']/tbody/tr") List<WebElement> staffRows;
-
-    @FindBy(xpath = "//button[@aria-label='Previous page']") WebElement previousPageIcon;
-    @FindBy(xpath="//*[name()='path' and contains(@d,'M18.41 16.')]") WebElement firstPageIcon;
-	@FindBy(xpath="//mat-card-content[@class='mat-card-content']//canvas[@class='chartjs-render-monitor']")	WebElement BarGraph;
-	@FindBy(xpath="//app-doughnutchart") WebElement PieChart;
-	
+//	@FindBy(xpath = "//div[@class='pagination-icons']") WebElement paginationIcons;//
+//    @FindBy(xpath = "//table[@id='staffTable']/tbody/tr") List<WebElement> staffRows; 
 //	@FindBy(xpath="//div[normalize-space()='49']") Web Element 
+	
+	
 	
 	// constructor
     public HomePageFactory() {
@@ -61,12 +63,7 @@ public class HomePageFactory {
     	PageFactory.initElements(driver, this);
     }
     
-//    public HomePageFactory(WebDriver driver) {
-//        this.driver = driver;
-//    //    this.wait = new WebDriverWait(driver, 10); // 10 seconds wait time
-//        PageFactory.initElements(driver, this);
-//    }
-
+    //methods
     public String getHomePageTitle() {
         return driver.getTitle();
     }
@@ -123,8 +120,8 @@ public class HomePageFactory {
 			case "firstPage": we = firstPageIcon; break;
 			case "UserCount": we = UserCount; break;
 			case "StaffCount" : we = StaffCount; break;			
-//			case "BatchCount" : we = BatchCount; break;
-//			case "ProgramCount" : we = ProgramCount; break;
+			case "batchCount" : we = batchCount; break;
+			case "ProgramCount" : we = programCount; break;
 		}
 		return we;
 	}
@@ -150,26 +147,6 @@ public class HomePageFactory {
 		return welcomeMessage.getText();
 	}	
 	
-//	public boolean getPieChart() {
-//        if (PieChart.isDisplayed()) {
-//            System.out.println("Doughnut is displayed");
-//            return true;
-//        } else {
-//            System.out.println("Doughnut is NOT displayed");
-//            return false;
-//        }
-//	}
-//	
-//	 public boolean verifyBarGraph() {
-//	        if (BarGraph.isDisplayed()) {
-//	            System.out.println("Bar graph is visible.");
-//	            return true;
-//	        } else {
-//	            System.out.println("Bar graph is not visible.");
-//	            return false;
-//	        }
-//	    }
-
 	public Boolean isDisplayed(WebElement webElement) {
         if (webElement.isDisplayed()) {
             return true;
@@ -198,16 +175,6 @@ public class HomePageFactory {
     }
     
     
-	
-					//	public String getBarGraph() {
-//		System.out.println(BarGraph.getText());
-//		return BarGraph.getText();
-//	}
-//	
-//	 public void getElementText() {
-//		 firstPageIcon.getText();
-//		 firstPageIcon.getAccessibleName();
-//	 }
 	
 	
 	

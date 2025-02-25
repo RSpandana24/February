@@ -141,8 +141,12 @@ public class Home_Steps {
 	@Then("Admin should see batch count")
 	public void admin_should_see_batch_count() {
 		stepsToLogin();
-//		System.out.println("widget[2]:"+Home.get_webelement("widget").getAccessibleName());
-		Assert.assertEquals(Home.isDisplayed(Home.get_webelement("BatchCount")),true);
+//		System.out.println("TagName:"+Home.get_webelement("batchCount").getTagName());
+//		System.out.println("Value:"+Home.get_webelement("batchCount").getAttribute("value"));
+//		System.out.println("InnerHTML:"+Home.get_webelement("batchCount").getAttribute("InnerHTML"));
+//		System.out.println("Text:"+Home.get_webelement("batchCount").getText());
+//		System.out.println("Location:"+Home.get_webelement("batchCount").getLocation());
+		Assert.assertEquals(Home.isDisplayed(Home.get_webelement("batchCount")),true);
 	}
 
 	
